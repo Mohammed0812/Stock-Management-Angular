@@ -7,6 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   fname = "";
+  pname = "";
+  rname = "";
   fprice = 0;
   fquant = 0;
   fpurchase= 0;
@@ -47,7 +49,7 @@ export class AppComponent {
 
   addPurchase() {
     let p = {
-      name: this.fname,
+      name: this.pname,
       out: this.fpurchase
     };
     this.purchase.push(p);
@@ -56,7 +58,7 @@ export class AppComponent {
 
   addReport() {
     let r = {
-      name: this.fname,
+      name: this.rname,
       received: this.freceived
     };
     this.report.push(r);
