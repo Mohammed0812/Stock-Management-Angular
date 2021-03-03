@@ -1,0 +1,86 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    background-color: skyblue;
+}
+h1{
+    background-color: blue;
+    color: white;
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 0px;
+    padding: 5px;
+    text-transform: uppercase;
+    text-shadow: 0 4px 1px black;
+}
+h2 {
+    color: blue;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-decoration: underline;
+}
+#UL {
+    list-style-type: none;
+    background-color: grey;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+#L {
+    float: left;
+}
+#L a {
+    display: block;
+    text-decoration: none;
+    color: #f1f1f1;
+    text-align: center;
+    padding: 10px 12px;
+}
+#L a:hover {
+    background-color: green;
+    color: white;
+}
+
+#Log {
+    float: right;
+    background-color: blue;
+    
+}
+#Log a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 8px 12px;
+}
+input {
+    margin-right: 5px;
+}
+table,th,td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    text-align: center;
+}
+th {
+    background-color: wheat;
+}
+td {
+    background-color: white;
+}
+table {
+    width: 50%;
+    margin-left: 10px;
+}
+th,td {
+    padding: 2px;
+}
+button {
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 10px;
+    outline: none;
+}
+button:hover {
+    background-color: blue;
+}
