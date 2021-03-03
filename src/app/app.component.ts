@@ -16,7 +16,6 @@ export class AppComponent {
   purchase: any = [
   ];
   report: any = [
-
   ];
   constructor() {
     let a = localStorage.getItem('product');
