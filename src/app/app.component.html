@@ -26,29 +26,29 @@
       <th>Quantity</th>
       <th>Delete</th>
     </tr>
-    <tr *ngFor="let q of product; let i = index">
-      <td>{{q.name}}</td>
-      <td>{{q.price}}</td>
-      <td>{{q.quant}}</td>
+    <tr *ngFor="let x of product; let i = index">
+      <td>{{x.name}}</td>
+      <td>{{x.price}}</td>
+      <td>{{x.quant}}</td>
       <td><button (click)="delete(i)">Delete</button></td>
     </tr>
   </table>
   <h2>Purchase Management</h2>
   <div>
     <label>Product Name</label>
-    <input type="text" [(ngModel)]="fname" placeholder="Enter fruit name">
+    <input type="text" [(ngModel)]="pname" placeholder="Enter fruit name">
     <br><br>
     <label>Purchase Quantity</label>
     <input type="number" [(ngModel)]="fpurchase" max="30">
     <br><br>
     <button (click)="addPurchase()">Purchase</button>
   </div>
-  <p *ngFor="let q of purchase">{{q.out}} {{q.name}} is purchasing...</p>
+  <p *ngFor="let y of purchase">{{y.out}} {{y.name}} is purchasing...</p>
 
   <h2>Report Product Details</h2>
   <div id="product">
     <label>Product Name</label>
-    <input type="text" [(ngModel)]="fname" placeholder="Enter fruit name">
+    <input type="text" [(ngModel)]="rname" placeholder="Enter fruit name">
     <br><br>
     <label>Quantity Received</label>
     <input type="number" [(ngModel)]="freceived">
@@ -56,6 +56,6 @@
   </div>
   <button (click)="addReport()">Add</button>
   <br>
-  <p *ngFor="let q of report">{{q.received}} {{q.name}} is received...</p>
+  <p *ngFor="let z of report">{{z.received}} {{z.name}} is received...</p>
   <router-outlet></router-outlet>
 </body>
