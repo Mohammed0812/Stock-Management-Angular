@@ -9,24 +9,26 @@ export class AppComponent {
   fname = "";
   pname = "";
   rname = "";
-  fprice = 0;
+  fprice: any;
   fquant = 50;
-  purchase= 0;
-  freceived = 0;
+  purchase: any;
+  received: any;
+  hand:any;
   product: any = [
   ];
-  Purchase: any = [
+  Purchases: any = [
   ];
   report: any = [
   ];
+
   constructor() {
     let a = localStorage.getItem('product');
     if (a) {
       this.product = JSON.parse(a);
     }
-    let b = localStorage.getItem('Purchase');
+    let b = localStorage.getItem('Purchases');
     if (b) {
-      this.Purchase = JSON.parse(b);
+      this.Purchases = JSON.parse(b);
     }
     let c = localStorage.getItem('report');
     if (c) {
@@ -53,15 +55,16 @@ export class AppComponent {
       out: this.purchase,
       in: this.fquant
     };
-    this.Purchase.push(p);
-    localStorage.setItem('Purchase', JSON.stringify(this.Purchase));
+    this.Purchases.push(p);
+    localStorage.setItem('Purchases', JSON.stringify(this.Purchases));
   }
 
   addReport() {
     let r = {
-      name: this.rname,
-      received: this.freceived
-    };
+     name: this.rname,
+     Received: this.received,
+     Total: this.hand + this.received
+   };
     this.report.push(r);
     localStorage.setItem('report', JSON.stringify(this.report));
   }
