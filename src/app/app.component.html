@@ -79,8 +79,13 @@
       </tr>
     </table>
     <br><br>
+    <label>Product Name</label>
     <input type="text" [(ngModel)]="rname" placeholder="name">
+    <br><br>
+    <label>Quantity Received</label>
     <input type="number" [(ngModel)]="received" placeholder="received">
+    <br><br>
+    <label>Quantity On Hand</label>
     <input type="number" [(ngModel)]="hand" placeholder="quant in Hand">
     <br><br>
     <button (click)='addReport()'>Add Report</button>
