@@ -33,7 +33,7 @@
     </table>
   </ng-container>
   <ng-container>
-    <h2>Purchase Management</h2>
+    <h2>Sales Management</h2>
     <table>
       <tr>
         <th>Name</th>
@@ -48,18 +48,18 @@
     <label>Product Name</label>
     <input type="text" [(ngModel)]="pname" placeholder="name">
     <br><br>
-    <label>Product Purchase</label>
-    <input type="number" [(ngModel)]='purchase' placeholder="purchase" min="4" max="50">
+    <label>Product Sales</label>
+    <input type="number" [(ngModel)]='sales' placeholder="sales" min="4" max="50">
     <br><br>
-    <button (click)='addPurchase()'>Purchase</button>
+    <button (click)='addSales()'>Sales</button>
     <br><br>
     <table>
       <tr>
         <th>Name</th>
-        <th>Product Out</th>
-        <th>Product In</th>
+        <th>Sales Quantity</th>
+        <th>Remaining Quantity</th>
       </tr>
-      <tr *ngFor='let p of Purchases'>
+      <tr *ngFor='let p of Sales'>
         <td>{{p.name}}</td>
         <td>{{p.out}}</td>
         <td>{{p.in-p.out}}</td>
@@ -71,9 +71,9 @@
     <table>
       <tr>
         <th>Name</th>
-        <th>Product In</th>
+        <th>Remaining Quantity</th>
       </tr>
-      <tr *ngFor='let p of Purchases'>
+      <tr *ngFor='let p of Sales'>
         <td>{{p.name}}</td>
         <td>{{p.in-p.out}}</td>
       </tr>
