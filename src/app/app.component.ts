@@ -11,12 +11,12 @@ export class AppComponent {
   rname = "";
   fprice: any;
   fquant = 50;
-  purchase: any;
+  sales: any;
   received: any;
   hand:any;
   product: any = [
   ];
-  Purchases: any = [
+  Sales: any = [
   ];
   report: any = [
   ];
@@ -26,9 +26,9 @@ export class AppComponent {
     if (a) {
       this.product = JSON.parse(a);
     }
-    let b = localStorage.getItem('Purchases');
+    let b = localStorage.getItem('Sales');
     if (b) {
-      this.Purchases = JSON.parse(b);
+      this.Sales = JSON.parse(b);
     }
     let c = localStorage.getItem('report');
     if (c) {
@@ -49,14 +49,14 @@ export class AppComponent {
     this.product.splice(i, 1);
   }
 
-  addPurchase() {
+  addSales() {
     let p = {
       name: this.pname,
-      out: this.purchase,
+      out: this.sales,
       in: this.fquant
     };
-    this.Purchases.push(p);
-    localStorage.setItem('Purchases', JSON.stringify(this.Purchases));
+    this.Sales.push(p);
+    localStorage.setItem('Sales', JSON.stringify(this.Sales));
   }
 
   addReport() {
