@@ -7,54 +7,78 @@
     <li id="L"><a href="#">About</a></li>
   </ul>
   <br>
-  <h2>Product Management</h2>
-  <label>Product Name</label>
-  <input type="text" [(ngModel)]="fname" placeholder="Enter fruit name">
+  <ng-container>
+    <h2>Product Management</h2>
+    <label>Product Name</label>
+    <input type="text" [(ngModel)]="fname" placeholder="Enter fruit name">
+    <br><br>
+    <label>Product Price</label>
+    <input type="number" [(ngModel)]="fprice" placeholder="Enter fruit price">
+    <br><br>
+    <button (click)="addProduct()">Add Product</button>
+    <br><br>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Delete</th>
+      </tr>
+      <tr *ngFor="let x of product; let i = index">
+        <td>{{x.name}}</td>
+        <td>{{x.price}}</td>
+        <td>{{x.quant}}</td>
+        <td><button (click)="delete(i)">Delete</button></td>
+      </tr>
+    </table>
+  </ng-container>
+  <ng-container>
+    <h2>Purchase Management</h2>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Quantity</th>
+      </tr>
+      <tr *ngFor="let x of product">
+        <td>{{x.name}}</td>
+        <td>{{x.quant}}</td>
+      </tr>
+    </table>
+    <br><br>
+    <label>Product Name</label>
+    <input type="text" [(ngModel)]="pname" placeholder="name">
+    <br><br>
+    <label>Product Purchase</label>
+    <input type="number" [(ngModel)]= 'purchase' placeholder="purchase" min="4" max="50">
   <br><br>
-  <label>Product Price</label>
-  <input type="number" [(ngModel)]="fprice" placeholder="Enter fruit price">
-  <br><br>
-  <label>Product Quantity</label>
-  <input type="number" [(ngModel)]="fquant" placeholder="Enter fruit quantity">
-  <br><br>
-  <button (click)="addProduct()">Add Product</button>
+  <button (click) ='addPurchase()'>Purchase</button>
   <br><br>
   <table>
     <tr>
       <th>Name</th>
-      <th>Price</th>
-      <th>Quantity</th>
-      <th>Delete</th>
+      <th>Product Out</th>
+      <th>Product In</th>
     </tr>
-    <tr *ngFor="let x of product; let i = index">
-      <td>{{x.name}}</td>
-      <td>{{x.price}}</td>
-      <td>{{x.quant}}</td>
-      <td><button (click)="delete(i)">Delete</button></td>
-    </tr>
-  </table>
-  <h2>Purchase Management</h2>
-  <div>
-    <label>Product Name</label>
-    <input type="text" [(ngModel)]="pname" placeholder="Enter fruit name">
-    <br><br>
-    <label>Purchase Quantity</label>
-    <input type="number" [(ngModel)]="fpurchase" max="30">
-    <br><br>
-    <button (click)="addPurchase()">Purchase</button>
-  </div>
-  <p *ngFor="let y of purchase">{{y.out}} {{y.name}} is purchasing...</p>
-  <h2>Report Product Details</h2>
-  <div id="product">
-    <label>Product Name</label>
-    <input type="text" [(ngModel)]="rname" placeholder="Enter fruit name">
-    <br><br>
-    <label>Quantity Received</label>
-    <input type="number" [(ngModel)]="freceived">
-    <br><br>
-  </div>
-  <button (click)="addReport()">Add</button>
-  <br>
-  <p *ngFor="let z of report">{{z.received}} {{z.name}} is received...</p>
+  <tr *ngFor = 'let p of Purchase'>
+    <td>{{p.name}}</td>
+    <td>{{p.out}}</td>
+    <td>{{p.in-p.out}}</td>
+  </tr>
+</table>
+  </ng-container>
+  <ng-container>
+    <h2>Report Product Details</h2>
+    <div id="product">
+      <label>Product Name</label>
+      <input type="text" [(ngModel)]="rname" placeholder="Enter fruit name">
+      <br><br>
+      <label>Quantity Received</label>
+      <input type="number" [(ngModel)]="freceived">
+      <br><br>
+    </div>
+    <button (click)="addReport()">Add</button>
+    <br>
+    <p *ngFor="let z of report">{{z.received}} {{z.name}} is received...</p>
+  </ng-container>
   <router-outlet></router-outlet>
 </body>
