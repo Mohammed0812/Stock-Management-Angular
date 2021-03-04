@@ -49,36 +49,45 @@
     <input type="text" [(ngModel)]="pname" placeholder="name">
     <br><br>
     <label>Product Purchase</label>
-    <input type="number" [(ngModel)]= 'purchase' placeholder="purchase" min="4" max="50">
-  <br><br>
-  <button (click) ='addPurchase()'>Purchase</button>
-  <br><br>
-  <table>
-    <tr>
-      <th>Name</th>
-      <th>Product Out</th>
-      <th>Product In</th>
-    </tr>
-  <tr *ngFor = 'let p of Purchase'>
-    <td>{{p.name}}</td>
-    <td>{{p.out}}</td>
-    <td>{{p.in-p.out}}</td>
-  </tr>
-</table>
+    <input type="number" [(ngModel)]='purchase' placeholder="purchase" min="4" max="50">
+    <br><br>
+    <button (click)='addPurchase()'>Purchase</button>
+    <br><br>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Product Out</th>
+        <th>Product In</th>
+      </tr>
+      <tr *ngFor='let p of Purchases'>
+        <td>{{p.name}}</td>
+        <td>{{p.out}}</td>
+        <td>{{p.in-p.out}}</td>
+      </tr>
+    </table>
   </ng-container>
   <ng-container>
     <h2>Report Product Details</h2>
-    <div id="product">
-      <label>Product Name</label>
-      <input type="text" [(ngModel)]="rname" placeholder="Enter fruit name">
-      <br><br>
-      <label>Quantity Received</label>
-      <input type="number" [(ngModel)]="freceived">
-      <br><br>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Product In</th>
+      </tr>
+      <tr *ngFor='let p of Purchases'>
+        <td>{{p.name}}</td>
+        <td>{{p.in-p.out}}</td>
+      </tr>
+    </table>
+    <br><br>
+    <input type="text" [(ngModel)]="rname" placeholder="name">
+    <input type="number" [(ngModel)]="received" placeholder="received">
+    <input type="number" [(ngModel)]="hand" placeholder="quant in Hand">
+    <br><br>
+    <button (click)='addReport()'>Add Report</button>
+    <br><br>
+    <div class="p">
+      <p *ngFor='let r of report'>{{r.Received}} {{r.name}} is received and total quantity is {{r.Total}}.</p>
     </div>
-    <button (click)="addReport()">Add</button>
-    <br>
-    <p *ngFor="let z of report">{{z.received}} {{z.name}} is received...</p>
   </ng-container>
   <router-outlet></router-outlet>
 </body>
