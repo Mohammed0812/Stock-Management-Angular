@@ -1,13 +1,12 @@
 <body>
   <h1>Stock Management</h1>
   <ul id="UL">
-    <li id="L"><a href="#">Product Management</a></li>
-    <li id="L"><a href="#">Sales Management</a></li>
-    <li id="L"><a href="#">Report</a></li>
-    <li id="L"><a href="#">About</a></li>
+    <li id="L"><a (click) = 'page1()'>Product Management</a></li>
+    <li id="L"><a (click) = 'page2()'>Sales Management</a></li>
+    <li id="L"><a (click) = 'page3()'>Report</a></li>
   </ul>
   <br>
-  <ng-container>
+  <ng-container *ngIf = 'pageName1'>
     <h2>Product Management</h2>
     <label>Product Name</label>
     <input type="text" [(ngModel)]="fname" placeholder="Enter fruit name">
@@ -32,7 +31,7 @@
       </tr>
     </table>
   </ng-container>
-  <ng-container>
+  <ng-container *ngIf = 'pageName2'>
     <h2>Sales Management</h2>
     <table>
       <tr>
@@ -66,7 +65,7 @@
       </tr>
     </table>
   </ng-container>
-  <ng-container>
+  <ng-container *ngIf = 'pageName3'>
     <h2>Report Product Details</h2>
     <table>
       <tr>
