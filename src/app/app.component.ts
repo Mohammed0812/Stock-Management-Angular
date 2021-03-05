@@ -63,6 +63,7 @@ export class AppComponent {
     let r = {
      name: this.rname,
      Received: this.received,
+     Hand:this.hand,
      Total: this.hand + this.received
    };
     this.report.push(r);
