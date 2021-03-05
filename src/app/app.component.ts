@@ -20,7 +20,9 @@ export class AppComponent {
   ];
   report: any = [
   ];
-
+  pageName1:any;
+  pageName2:any;
+  pageName3:any;
   constructor() {
     let a = localStorage.getItem('product');
     if (a) {
@@ -68,5 +70,20 @@ export class AppComponent {
    };
     this.report.push(r);
     localStorage.setItem('report', JSON.stringify(this.report));
+  }
+  page1() {
+    this.pageName1 = true;
+    this.pageName2 = false;
+    this.pageName3 = false;
+  }
+  page2() {
+    this.pageName2 = true;
+    this.pageName1 = false;
+    this.pageName3 = false;
+  }
+  page3() {
+    this.pageName3 = true;
+    this.pageName2 = false;
+    this.pageName1 = false;
   }
 }
