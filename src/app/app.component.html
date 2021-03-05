@@ -90,9 +90,22 @@
     <br><br>
     <button (click)='addReport()'>Add Report</button>
     <br><br>
-    <div class="p">
-      <p *ngFor='let r of report'>{{r.Received}} {{r.name}} is received and total quantity is {{r.Total}}.</p>
-    </div>
+    <input type="date" style="margin-left: 20%;background-color: yellow;color: red;">
+    <br><br>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Received</th>
+        <th>Remaining Quantity</th>
+        <th>Total</th>
+      </tr>
+      <tr *ngFor = 'let r of report'>
+        <td>{{r.name}}</td>
+        <td>{{r.Received}}</td>
+        <td>{{r.Hand}}</td>
+        <td>{{r.Total}}</td>
+      </tr>
+    </table>
   </ng-container>
   <router-outlet></router-outlet>
 </body>
