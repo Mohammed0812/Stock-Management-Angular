@@ -1,10 +1,13 @@
 <body>
+  <ng-container *ngIf = 'pageName'>
   <h1>Stock Management</h1>
   <ul id="UL">
+    <li id="L"><a (click) = 'page()'>Home</a></li>
     <li id="L"><a (click) = 'page1()'>Product Management</a></li>
     <li id="L"><a (click) = 'page2()'>Sales Management</a></li>
     <li id="L"><a (click) = 'page3()'>Report</a></li>
   </ul>
+</ng-container>
   <br>
   <ng-container *ngIf = 'pageName1'>
     <h2>Product Management</h2>
