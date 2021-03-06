@@ -20,6 +20,7 @@ export class AppComponent {
   ];
   report: any = [
   ];
+  pageName:any = true;
   pageName1:any;
   pageName2:any;
   pageName3:any;
@@ -70,6 +71,11 @@ export class AppComponent {
    };
     this.report.push(r);
     localStorage.setItem('report', JSON.stringify(this.report));
+  }
+  page() {
+    this.pageName1 = false;
+    this.pageName2 = false;
+    this.pageName3 = false;
   }
   page1() {
     this.pageName1 = true;
